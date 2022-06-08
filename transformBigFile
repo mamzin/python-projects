@@ -1,0 +1,23 @@
+import os
+
+BIG_FILE = 'D:\\Downloads\\anyBigFile.txt'
+TEMP_FILE = 'D:\\Downloads\\tempBigFile.txt'
+
+
+def rewrite_file():
+    count_line = 0
+    with open(BIG_FILE, 'r', encoding='UTF8') as fr:
+        with open(TEMP_FILE, 'w', encoding='UTF8') as fw:
+            for line in fr:
+                count_line += 1
+                fw.write(str(count_line) + " " + line)
+    change_file()
+
+
+def change_file():
+    os.remove(BIG_FILE)
+    os.rename(TEMP_FILE, BIG_FILE)
+
+
+if __name__ == '__main__':
+    rewrite_file()
