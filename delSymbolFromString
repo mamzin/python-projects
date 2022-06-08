@@ -1,0 +1,10 @@
+import re
+
+your_symbol = "#"  # ""
+
+
+def clear_spaces(durty_string):
+    return re.sub(r"[\n\t\s]", your_symbol, durty_string)
+
+
+print(clear_spaces("Напишите функцию,\nпринимающую в качестве аргумента\tстроку"))
